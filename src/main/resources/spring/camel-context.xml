@@ -10,7 +10,7 @@
                 <to uri="direct:hello"/>
             </get>
             
-            <get consumes="application/json" id="get" produces="text" uri="/helloorld">
+            <get consumes="application/json" id="get" produces="text" uri="/helloworld">
                 <to uri="direct:helloworld"/>
             </get>
         </rest>
@@ -23,10 +23,7 @@
                 <constant>{{message}}</constant>
             </transform>
             <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
-            
-             <to uri="http4://localhost:8080/api/say/helloworld"/>
-            
-            
+        
             
         </route>
         
