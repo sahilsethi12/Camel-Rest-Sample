@@ -30,7 +30,7 @@
           <route id="_route2">
             <from id="_from1" uri="direct:helloworld"/>
             <transform id="_transform2">
-                <constant>New Helloworld</constant>
+                <constant>New HELLO  Helloworld</constant>
             </transform>
             <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
             
