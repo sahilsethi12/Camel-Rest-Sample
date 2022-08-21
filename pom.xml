@@ -4,7 +4,7 @@
 	xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>orgq.mycompanysample</groupId>
+	<groupId>orgq.mycompany</groupId>
 	<artifactId>camel-rest-sample</artifactId>
 	<version>1.0.3</version>
 	<name>camel-amq-broker-producer</name>
