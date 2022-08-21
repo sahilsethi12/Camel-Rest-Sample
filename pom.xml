@@ -5,7 +5,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.mycompany</groupId>
-	<artifactId>camel-amq-broker-producer</artifactId>
+	<artifactId>camel-rest-sample</artifactId>
 	<version>1.0.0</version>
 	<name>camel-amq-broker-producer</name>
 	<description>camel-amq-broker-producer</description>
