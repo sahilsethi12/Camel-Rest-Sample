@@ -22,7 +22,7 @@
             <transform id="_transform1">
                 <simple>{{message}}</simple>
             </transform>
-            <log message="Hello"/>
+            <log message="Hello {{app.name}}"/>
             <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
         
             
