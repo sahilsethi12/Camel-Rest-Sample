@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="        http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd        http://camel.apache.org/schema/spring       https://camel.apache.org/schema/spring/camel-spring.xsd">
+    <camelContext id="camel" xmlns="http://camel.apache.org/schema/spring">
+      
+      
+        <restConfiguration component="servlet" contextPath="/api"/>
+        <rest id="rest" path="/say">
+            <get consumes="application/json" id="get" produces="text" uri="/hello">
+                <to uri="direct:hello"/>
+            </get>
+            
+            <get consumes="application/json" id="get" produces="text" uri="/helloworld">
+                <to uri="direct:helloworld"/>
+            </get>
+        </rest>
+        
+        
+        
+        <route id="_route1">
+            <from id="_from1" uri="direct:hello"/>
+            <transform id="_transform1">
+                <simple>{{message}}</simple>
+            </transform>
+            <log message="Hello"/>
+            <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
+        
+            
+        </route>
+        
+          <route id="_route2">
+            <from id="_from1" uri="direct:helloworld"/>
+            <transform id="_transform2">
+                <constant>New HELLO  Helloworld</constant>
+            </transform>
+            <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
+            
+            
+            
+            
+            
+        </route>
+    </camelContext>
+    <bean
+        class="org.apache.camel.component.servlet.CamelHttpTransportServlet" id="camelHttpTransportServlet"/>
+    <bean
+        class="org.springframework.boot.web.servlet.ServletRegistrationBean" id="servlet">
+        <property name="name" value="CamelServlet"/>
+        <property name="servlet" ref="camelHttpTransportServlet"/>
+        <property name="urlMappings" value="/api/*"/>
+    </bean>
+   <!--  <bean class="org.apache.qpid.jms.JmsConnectionFactory" id="jmsConnectionFactory">
+        <property name="username" value="${amqp.username}"/>
+        <property name="password" value="${amqp.password}"/>
+        <property name="remoteURI" value="${amqp.url}"/>
+    </bean> -->
+   <!--  <bean class="org.apache.camel.component.sjms2.Sjms2Component" id="amqp">
+        <property name="connectionFactory" ref="jmsConnectionFactory"/>
+    </bean> -->
+</beans>
