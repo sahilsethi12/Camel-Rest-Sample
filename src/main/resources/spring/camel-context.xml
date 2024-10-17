@@ -20,7 +20,7 @@
         <route id="_route1">
             <from id="_from1" uri="direct:hello"/>
             <transform id="_transform1">
-                <constant>{{message}}</constant>
+                <simple>{{message}}</simple>
             </transform>
             <!-- <to id="route-to-incoming-orders" uri="amqp:incomingOrders"/> -->
         
